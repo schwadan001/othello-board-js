@@ -1,7 +1,7 @@
 # othello-board-js
 othello-board-js is a simple JavaScript Othello board built on [othello-js](https://github.com/schwadan001/othello-js).
 
-An example implementation of othello-js and othello-board-js is viewable in this repository's published GitHub.io site: https://schwadan001.github.io/othello-board/
+An example implementation of othello-js and othello-board-js is viewable in this repository's published GitHub.io site: https://schwadan001.github.io/othello-board-js/
 
 
 ## Getting started
