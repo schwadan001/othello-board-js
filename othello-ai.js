@@ -46,7 +46,8 @@ function aiEval(board, turn, opp) {
     return val;
 }
 
-function aiMove() {
+function getAiMove(fen) {
+    let othello = new Othello({ 'fen': fen })
     let moves = shuffle(othello.getMoves());
     let turn = othello.turn;
     let opp = othello.getOppColor();
@@ -59,7 +60,7 @@ function aiMove() {
             bestMove = { "move": m, "val": val };
         }
     });
-    board.move(bestMove.move);
+    return bestMove;
 }
 
 function getSquaresToCorner(board, startRow, startCol, rowDirection, colDirection) {

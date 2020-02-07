@@ -6,7 +6,10 @@ const board = new OthelloBoard(othello, {
 });
 
 function executeAiMove() {
-    setTimeout(aiMove, 1000);
+    setTimeout(function () {
+        let bestMove = getAiMove(othello.fen())
+        board.move(bestMove.move);
+    }, 1000);
 }
 
 function shuffle(arr) {
