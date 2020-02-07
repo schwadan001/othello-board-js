@@ -1,7 +1,7 @@
 # othello-board-js
 othello-board-js is a simple JavaScript Othello board built on [othello-js](https://github.com/schwadan001/othello-js).
 
-An example implementation of othello-js and othello-board-js is viewable in this repository's published GitHub.io site: https://schwadan001.github.io/othello-board/
+An example implementation of othello-js and othello-board-js is viewable in this repository's published GitHub.io site: https://schwadan001.github.io/othello-board-js/
 
 
 ## Getting started
@@ -125,7 +125,7 @@ board.move({'row': 2, 'col': 4}); // move executed; display updated; turn switch
 ```
 
 ### .updateDisplay()
-Forces the update of the display (board and score), and highlights changes to the board since the display was last updated. There isn't a strong use case for calling this method since .move() calls .updateDisplay() automatically.
+Forces the update of the display (board and score), and highlights changes to the board since the display was last updated. There isn't a strong use case for calling this method since ```.move()``` calls ```.updateDisplay()``` automatically.
   * The piece that was placed is highlighted in purple.
   * Pieces that are flipped as a result of that placement are highlighted in pink.
 
