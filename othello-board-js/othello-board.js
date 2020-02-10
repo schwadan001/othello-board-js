@@ -14,6 +14,7 @@ class OthelloBoard {
         this.displayMoves = (config.displayMoves != undefined ? config.displayMoves : 'both');
         this.onBlackMove = (config.onBlackMove != undefined ? (config.onBlackMove) : function () { });
         this.onWhiteMove = (config.onWhiteMove != undefined ? (config.onWhiteMove) : function () { });
+        this.onGameOver = (config.onGameOver != undefined ? (config.onGameOver) : function () { });
         this.updateDisplay();
         if (this.othello.turn == 'b') {
             this.onBlackMove();
@@ -76,6 +77,8 @@ class OthelloBoard {
             this.onBlackMove();
         } else if (!this.othello.gameOver() && this.othello.turn == 'w' && this.onBlackMove != undefined) {
             this.onWhiteMove();
+        } else if (this.othello.gameOver()) {
+            this.onGameOver();
         }
     }
 
@@ -83,6 +86,7 @@ class OthelloBoard {
         this.othello.reset();
         this.lastBoard = this.othello.getBoard();
         this.updateDisplay();
+        this.onBlackMove();
     }
 
     _getChanges() {

@@ -34,7 +34,7 @@ The following code will play a random game of Othello:
             let moves = othello.getMoves();
             let move = moves[Math.floor(Math.random() * moves.length)];
             board.move(move);
-        }, 3000);
+        }, 2000);
     }
 </script>
 </html>
@@ -61,9 +61,11 @@ The constructor takes 2 parameters:
       * **displayMoves** : string => determines which players will be able to see clickable move options displayed on the board. This should be selected for player moves and turned off for AI moves.
         * options : ```'both', 'none', 'b', 'w'```
         * default = ```'both'```
-      * **onBlackMove** : string => function to execute when it's black's turn.
+      * **onBlackMove** : function => function to execute when it's black's turn.
         * default = ```function () { }```
-      * **onWhiteMove** : string => function to execute when it's black's turn.
+      * **onWhiteMove** : function => function to execute when it's black's turn.
+        * default = ```function () { }```
+      * **onGameOver** : function => function to execute when the game is over.
         * default = ```function () { }```
 
 ``` javascript
@@ -130,7 +132,7 @@ Forces the update of the display (board and score), and highlights changes to th
   * Pieces that are flipped as a result of that placement are highlighted in pink.
 
 ### .reset()
-Calls the ```.reset()``` method on the ```Othello``` object and updates the display. 
+Calls the ```.reset()``` method on the board's ```Othello``` object and updates the display. Also initiates ```onBlackMove()``` after the game has been reset.
 
 ```javascript
 // correct way to reset the board and game state
@@ -139,7 +141,7 @@ let board = new OthelloBoard(othello);
 board.move({'row': 2, 'col': 4});
 board.reset();
 
-// NOT EQUIVALENT - this will highlight all the 'changes' that occur when the board is reset
+// NOT EQUIVALENT
 let othello = new Othello();
 let board = new OthelloBoard(othello);
 board.move({'row': 2, 'col': 4});
