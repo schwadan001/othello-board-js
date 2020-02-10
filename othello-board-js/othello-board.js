@@ -52,8 +52,8 @@ class OthelloBoard {
         $(this.boardId).html(tableStr);
 
         var infoStr = '';
-        let bCount = this._getCount('b');
-        let wCount = this._getCount('w')
+        let bCount = this.othello.getScore('b');
+        let wCount = this.othello.getScore('w')
         if (this.othello.gameOver()) {
             infoStr += 'Game Over - '
             if (bCount > wCount) {
@@ -102,19 +102,6 @@ class OthelloBoard {
         }
         this.lastBoard = this.othello.getBoard();
         return changes;
-    }
-
-    _getCount(color) {
-        var counter = 0;
-        let b = this.othello.getBoard()
-        for (var row = 0; row < this.othello.dim; row++) {
-            for (var col = 0; col < this.othello.dim; col++) {
-                if (b[row][col] == color) {
-                    counter++;
-                }
-            }
-        }
-        return counter;
     }
 
     _getId(obj) {
