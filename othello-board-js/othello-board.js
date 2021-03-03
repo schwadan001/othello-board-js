@@ -16,7 +16,6 @@ class OthelloBoard {
         this.onWhiteMove = (config.onWhiteMove != undefined ? (config.onWhiteMove) : function () { });
         this.onGameOver = (config.onGameOver != undefined ? (config.onGameOver) : function () { });
         this.updateDisplay();
-        resize();
         if (this.othello.turn == "b") {
             this.onBlackMove();
         } else {
@@ -69,6 +68,7 @@ class OthelloBoard {
         }
         infoStr += "<br/>Score: ( B: " + bCount + " | W: " + wCount + " )";
         $(this.infoId).html(infoStr);
+        resize();
     }
 
     move(position) {
