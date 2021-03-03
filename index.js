@@ -1,23 +1,22 @@
 const othello = new Othello();
 const board = new OthelloBoard(othello, {
     "displayMoves": "b",
-    "onWhiteMove": executeAiMove,
-    "onGameOver": restart
+    "onWhiteMove": executeAiMove
 });
 
 function executeAiMove() {
     setTimeout(function () {
-        let moves = othello.getMoves();
-        let move = moves[Math.floor(Math.random() * moves.length)];
-        board.move(move);
+        let aiMove = getAiMove(othello.fen());
+        board.move(aiMove.move);
     }, 1000);
 }
 
 function restart() {
-    setTimeout(function () {
-        let bScore = othello.getScore("b");
-        let wScore = othello.getScore("w");
-        console.log(bScore + " | " + wScore);
-        board.reset();
-    }, 5000);
+    let bScore = othello.getScore("b");
+    let wScore = othello.getScore("w");
+    console.log(bScore + " | " + wScore);
+    board.reset();
 }
+
+window.addEventListener("resize", resize, false);
+window.addEventListener("orientationchange", resize, false);

@@ -3,6 +3,7 @@
 <head>
     <title>Othello</title>
     <meta name="description" content="Online Othello">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="othello-board-js/othello-board.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -11,23 +12,24 @@
 </head>
 
 <body>
-    <!-- Banner -->
-    <div class="flex-item banner">
+    <div class="banner">
         <img class="banner" alt="Site Banner" src="banner.webp">
         <h1 class="banner-text">Othello</h1>
     </div>
-    <!-- Board -->
-    <div class="flex-vert">
-        <div class="flex-item" id="info"></div>
-        <div class="flex-item">
+    <div id="info"></div>
+    <div style="text-align:center">
+        <button id="restart-btn" onclick="restart()" class="btn btn-primary">New Game</button>
+        <div id="board-area">
             <table id="board"></table>
         </div>
     </div>
 </body>
+
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="othello-js/othello.js"></script>
 <script src="othello-board-js/othello-board.js"></script>
+<script src="othello-ai.js"></script>
 <script src="index.js"></script>
 
 </html>
