@@ -81,6 +81,7 @@ class OthelloBoard {
         } else if (this.othello.gameOver()) {
             this.onGameOver();
         }
+        new Audio("othello-board-js/move.mp3").play();
     }
 
     reset() {
