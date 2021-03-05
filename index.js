@@ -12,7 +12,6 @@ function executeAiMove() {
         if (!cancelMove) {
             let aiMove = getAiMove(othello.fen());
             board.move(aiMove.move);
-            playAudio();
         }
     }, 1000 + Math.floor(Math.random() * 400));
 }
