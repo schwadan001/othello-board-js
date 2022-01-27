@@ -22,7 +22,7 @@ function restart() {
     let wScore = othello.getScore("w");
     console.log(bScore + " | " + wScore);
     board.reset();
-    new Audio("restart.mp3").play();
+    new Audio("othello-board-js/restart.mp3").play();
 }
 
 window.addEventListener("resize", resize, false);
