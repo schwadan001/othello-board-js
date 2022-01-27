@@ -63,7 +63,7 @@ The constructor takes 2 parameters:
         * default = ```'both'```
       * **onBlackMove** : function => function to execute when it's black's turn.
         * default = ```function () { }```
-      * **onWhiteMove** : function => function to execute when it's black's turn.
+      * **onWhiteMove** : function => function to execute when it's white's turn.
         * default = ```function () { }```
       * **onGameOver** : function => function to execute when the game is over.
         * default = ```function () { }```
